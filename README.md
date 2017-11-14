@@ -10,21 +10,18 @@ In this project, I both want to be more familiar with the object-oriented progra
 
 ## Installation
 
-1.Install Python 2.7
-2.Open your terminal 
-3.Reach the file MiniProject4-moiveWeb in terminal and use cmd line: cd MiniProject4-moiveWeb to open it
-4.Use cmd line: python entertainment.py to generate the HTML website
+1.Install Python 2.7<br>
+2.Open your terminal<br>
+3.Reach the file MiniProject4-moiveWeb in terminal and use cmd line: cd MiniProject4-moiveWeb to open it<br>
+4.Use cmd line: python entertainment.py to generate the HTML website<br>
 
 
 ## API Reference
 This project has implemented the file fresh_tomatoes.py, which can be find in the following link: https://github.com/udacity/ud036_StarterCode
 
 
-## Copyright:
-Xuanqi_Chen, 2017/11/07
-
 ## Others:
 
-1.You can also see the final result by open file fresh_tomatoes.html directly
-2.PEP8_entertainment.py shows the correct format in PEP8 of file entertainment.py
+1.You can also see the final result by open file fresh_tomatoes.html directly<br>
+2.PEP8_entertainment.py shows the correct format in PEP8 of file entertainment.py<br>
 

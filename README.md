@@ -12,7 +12,8 @@ In this project, I both want to be more familiar with the object-oriented progra
 
 1.Install Python 2.7<br>
 2.Open your terminal<br>
-3.Reach the file MiniProject4-moiveWeb in terminal and use cmd line: cd MiniProject4-moiveWeb to open it<br>
+3.Reach the file Share-Best-Moive-Trailer-WebSite-master in terminal and use <br>
+cmd line: cd Share-Best-Moive-Trailer-WebSite-master to open it<br>
 4.Use cmd line: python entertainment.py to generate the HTML website<br>
 
 

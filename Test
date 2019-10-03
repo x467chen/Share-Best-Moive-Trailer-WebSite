@@ -1,0 +1,55 @@
+ public class LFUCache {
+ 2     HashMap<Integer, Integer> keyVals;
+ 3     HashMap<Integer, Integer> keyCounts;
+ 4     HashMap<Integer, LinkedHashSet<Integer>> countKeySets;
+ 5     int capacity;
+ 6     int min;
+ 7 
+ 8     public LFUCache(int capacity) {
+ 9         this.capacity = capacity;
+10         this.min = -1;
+11         keyVals = new HashMap<Integer, Integer>();
+12         keyCounts = new HashMap<Integer, Integer>();
+13         countKeySets = new HashMap<Integer, LinkedHashSet<Integer>>();
+14         countKeySets.put(1, new LinkedHashSet<Integer>());
+15     }
+16     
+17     public int get(int key) {
+18         if(!keyVals.containsKey(key)){
+19             return -1;
+20         }
+21         int count = keyCounts.get(key);
+22         keyCounts.put(key, count+1);
+23         countKeySets.get(count).remove(key);
+24         if(count == min && countKeySets.get(count).size() == 0){
+25             min++;
+26         }
+27         if(!countKeySets.containsKey(count+1)){
+28             countKeySets.put(count+1, new LinkedHashSet<Integer>());
+29         }
+30         countKeySets.get(count+1).add(key);
+31         return keyVals.get(key);
+32     }
+33     
+34     public void put(int key, int value) {
+35         if(capacity <= 0){
+36             return;
+37         }
+38         
+39         if(keyVals.containsKey(key)){
+40             keyVals.put(key, value);
+41             get(key);
+42             return;
+43         }
+44         if(keyVals.size() >= capacity){
+45             int leastFreq = countKeySets.get(min).iterator().next();
+46             keyVals.remove(leastFreq);
+47             keyCounts.remove(leastFreq);
+48             countKeySets.get(min).remove(leastFreq);
+49         }
+50         keyVals.put(key, value);
+51         keyCounts.put(key, 1);
+52         countKeySets.get(1).add(key);
+53         min = 1;
+54     }
+55 }
